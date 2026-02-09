@@ -1,2 +1,10 @@
 # Virtual Env
-.venv
+.venv/
+
+*__pycache__/
+*.ruff_cache/
+
+# Environment variables
+.env
+
+*.vscode/
