@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16
+
+    container_name: dottie_db
+
+    environment:
+      POSTGRES_USER: dottie
+      POSTGRES_PASSWORD: dottie
+      POSTGRES_DB: dottie
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
