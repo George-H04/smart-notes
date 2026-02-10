@@ -8,6 +8,6 @@ class Entry(BaseModel):
     name: str                      
     entry_id: int = Field(unique=True, default_factory=uuid4)              
     duration: int | None = None     
-    timestamp: datetime              
+    # timestamp: datetime              
     mode: str | None = None         
     tags: list[str] | None = None
