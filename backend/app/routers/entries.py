@@ -3,22 +3,25 @@ from app.models import Entry
 
 router = APIRouter()
 
+
 @router.get("/entries")
 def get_entries():
     # What to do here:
-    #   Simply query all entries and return them... not very useful
+    #   Simply query all entries and return them... not very usefull
     return "Okay!"
+
 
 @router.post("/entries")
 def upload_entry(entry: Entry):
     # Takes in an entry model, stores in database
     pass
 
+
 @router.put("/entries/{id}")
 def update_entry(note_id: int):
     pass
 
+
 @router.delete("/entries/{id}")
 def delete_entry(note_id: int):
     pass
-
