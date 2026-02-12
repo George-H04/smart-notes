@@ -5,7 +5,7 @@ from sqlmodel import Field
 
 class Entry(BaseModel):
     name: str
-    entry_id: int = Field(unique=True, default_factory=uuid4)
+    entry_id: str = Field(unique=True, default_factory=uuid4)
     duration: int | None = None
     # timestamp: datetime
     mode: str | None = None

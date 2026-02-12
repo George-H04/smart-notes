@@ -1,5 +1,5 @@
-from fastapi import APIRouter
-from app.models import Entry
+from fastapi import APIRouter, status
+from backend.app.models import Entry
 
 router = APIRouter()
 
@@ -11,10 +11,10 @@ def get_entries():
     return "Okay!"
 
 
-@router.post("/entries")
+@router.post("/entries", status_code=status.HTTP_201_CREATED)
 def upload_entry(entry: Entry):
     # Takes in an entry model, stores in database
-    pass
+    return "201"
 
 
 @router.put("/entries/{id}")
