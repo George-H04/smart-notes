@@ -1,6 +1,20 @@
 [project]
 name = "dottie"
 version = "0.1.0"
+dependencies = [
+    'pydantic_settings',
+    'typing',
+    'sqlalchemy',
+    'uuid',
+    'datetime',
+    'fastapi',
+    'contextlib',
+    'httpx',
+    'pydantic',
+    'pytest_asyncio',
+    'pytest',
+    'asgi_lifespan'
+]
 
 [build-system]
 requires = ["setuptools"]
