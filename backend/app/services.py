@@ -7,7 +7,7 @@ from typing import List
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from backend.app.db.models import Note, Tag
+from backend.app.db.models import Note, Tag, note_tags
 from backend.app.schemas import NoteEntry
 
 
@@ -76,3 +76,24 @@ def build_db_entry(entry, tags):
     )
 
     return db_entry
+
+
+def clear_db(db_instance: Session):
+    db_instance.execute(note_tags.delete())
+    db_instance.query(Note).delete()
+    db_instance.query(Tag).delete()
+    db_instance.commit()
+
+    return
+
+
+def get_notes_from_tags(db_instance: Session, tags: list[str]) -> list[Note]:
+    elements = (
+        db_instance.query(Note)
+        .join(Note.tags)
+        .filter(Tag.tag_name.in_(tags))
+        .distinct()
+        .all()
+    )
+
+    return elements
