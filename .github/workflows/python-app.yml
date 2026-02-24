@@ -38,6 +38,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+
+      MAX_OVERFLOW: ${{ vars.MAX_OVERFLOW }}
+      POOL_PRE_PING: ${{ vars.POOL_PRE_PING }}
+      POOL_RECYCLE: ${{ vars.POOL_RECYCLE }}
+      POOL_SIZE: ${{ vars.POOL_SIZE }}
+      POOL_TIMEOUT: ${{ vars.POOL_TIMEOUT }}
+
     services:
       postgres:
         image: postgres:16
