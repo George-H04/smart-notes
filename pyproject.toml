@@ -10,7 +10,8 @@ dependencies = [
     'pytest_asyncio',
     'pytest',
     'pytest-cov',
-    'asgi_lifespan'
+    'asgi_lifespan',
+    'psycopg2'
 ]
 
 [build-system]
