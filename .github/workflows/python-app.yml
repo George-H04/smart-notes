@@ -65,7 +65,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           persist-credentials: false
-
+      - name: Set up Python 3.10
+        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d
       - name: Debug env
         run: env | grep POOL
       - name: Test and coverage
