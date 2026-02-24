@@ -60,4 +60,4 @@ jobs:
       - name: Test and coverage
         run: |
           pip install .
-          pytest --cov
+          pytest --cov=backend

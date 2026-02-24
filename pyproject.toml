@@ -9,6 +9,7 @@ dependencies = [
     'pydantic',
     'pytest_asyncio',
     'pytest',
+    'pytest-cov',
     'asgi_lifespan'
 ]
 
