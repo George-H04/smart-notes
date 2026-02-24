@@ -1,6 +1,18 @@
 [project]
 name = "dottie"
 version = "0.1.0"
+dependencies = [
+    'pydantic_settings',
+    'sqlalchemy',
+    'fastapi',
+    'httpx',
+    'pydantic',
+    'pytest_asyncio',
+    'pytest',
+    'pytest-cov',
+    'asgi_lifespan',
+    'psycopg2'
+]
 
 [build-system]
 requires = ["setuptools"]
@@ -8,3 +20,6 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
